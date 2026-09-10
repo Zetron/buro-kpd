@@ -1,0 +1,268 @@
+/* ---------- Четвёртый блок: «Команда — это актив» ---------- */
+.approach {
+  /* отступ от предыдущего блока — 120px на десктопе */
+  padding-top: 120px;
+  /* отступ до следующего блока задаётся его margin-top */
+  padding-bottom: 0;
+}
+
+/* блок уже общего контейнера: 1088px контента при ширине макета */
+.approach__inner {
+  width: 100%;
+  max-width: calc(1088px + var(--gutter) * 2);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.approach__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.approach__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background: var(--c-badge);
+  border-radius: 56px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+}
+
+.approach__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+/* --- Широкая карточка --- */
+.approach__feature {
+  position: relative;
+  min-height: 383px;
+  margin-bottom: 20px;
+  padding: 32px;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.approach__feature-text {
+  position: relative;
+  z-index: 1;
+  max-width: 544px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 40px;
+  color: var(--c-brand);
+}
+
+/* картинка заходит под текст левым прозрачным краем — как в макете */
+.approach__feature-media {
+  position: absolute;
+  /* -1px: абсолютное позиционирование считается от padding-box, в макете — от рамки */
+  top: 16px;
+  right: 17px;
+  width: 49.81%;
+}
+
+.approach__feature-media img {
+  width: 100%;
+  height: auto;
+}
+
+/* --- Три карточки --- */
+.approach__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.acard {
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+  padding: 20px 24px 0;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.acard__title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--c-brand);
+}
+
+.acard__note {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--c-note);
+}
+
+.acard__media {
+  margin-top: auto;
+}
+
+/* отчёт: кадрирование из макета */
+.acard__media--papers {
+  position: relative;
+  width: 288px;
+  max-width: 100%;
+  margin-inline: auto;
+  aspect-ratio: 288 / 283;
+  overflow: hidden;
+}
+
+.acard__media--papers img {
+  position: absolute;
+  top: -8.99%;
+  left: -51.32%;
+  width: 202.64%;
+  height: 137.42%;
+  max-width: none;
+}
+
+/* график: во всю ширину карточки */
+.acard__media--chart {
+  width: calc(100% + 48px);
+  margin-inline: -24px;
+  margin-bottom: 30px;
+}
+
+.acard__media--chart img {
+  width: 100%;
+  height: auto;
+}
+
+/* рубль */
+.acard__media--ruble {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.acard__coin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 130px;
+  height: 130px;
+  background: var(--c-accent-2);
+  border-radius: 50%;
+}
+
+.acard__coin img {
+  width: 66px;
+  height: 66px;
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  /* картинка позиционирована абсолютно, поэтому высоту карточки держим
+     пропорцией макета — иначе картинка обрезается */
+  .approach__feature {
+    min-height: 0;
+    aspect-ratio: 1088 / 383;
+  }
+
+  .approach__feature-text {
+    max-width: 52%;
+    font-size: 22px;
+    line-height: 34px;
+  }
+
+  .approach__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .acard {
+    min-height: 0;
+    padding-inline: 20px;
+  }
+
+  .acard__media--chart {
+    width: calc(100% + 40px);
+    margin-inline: -20px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .approach {
+    /* отступ от предыдущего блока — 80px на мобильных */
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .approach__head {
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .approach__badge {
+    padding: 8px 14px;
+    font-size: 18px;
+  }
+
+  .approach__title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  /* картинка уезжает под текст */
+  .approach__feature {
+    aspect-ratio: auto;
+    padding: 24px;
+  }
+
+  .approach__feature-text {
+    max-width: none;
+    font-size: clamp(18px, 4.4vw, 22px);
+    line-height: 1.5;
+  }
+
+  .approach__feature-media {
+    position: static;
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto 0;
+  }
+
+  .approach__cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .acard {
+    padding: 20px 20px 0;
+  }
+
+  .acard__media--ruble {
+    margin-block: 24px 32px;
+  }
+
+  .acard__media--chart {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .acard__media--papers {
+    margin-top: 24px;
+  }
+}

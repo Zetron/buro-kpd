@@ -1,0 +1,85 @@
+/* Дизайн-токены из макета Figma (Бюро КПД / Head) */
+:root {
+  /* Цвета */
+  --c-brand: #5a3853;
+  --c-brand-border: #72566c;
+  --c-brand-hover: #4a2d45;
+  --c-text: #5a3853;
+  --c-muted: #887373;
+  --c-chip-text: #574964;
+  --c-border: #e5e5e9;
+  --c-card-bg: #fafaf9;
+  --c-badge: #573650;
+  --c-note: rgba(87, 73, 100, 0.8);
+
+  /* акценты иконок во втором блоке */
+  --c-accent-1: #5a3853;
+  --c-accent-2: #854e79;
+  --c-accent-3: #887373;
+
+  /* тёмная секция «Как мы работаем» */
+  --c-panel-dark: #3d2237;
+  --c-plum: #7d5270;
+  --c-bar: #9f7c97;
+  --c-success: #319d5a;
+  --c-tag-bg: #f3eef1;
+
+  /* блок с тарифами */
+  --c-ink: #2b2129;
+  --c-green-ink: #2b6a4c;
+  --c-green-bg: #ebf5ee;
+  --c-featured-bg: #fbf6f9;
+  --c-divider-soft: #d0bccb;
+
+  /* формы */
+  --c-field-border: #e4e4e7;
+  --c-field-disabled: #f9fafb;
+  --c-field-disabled-ink: #a1a1aa;
+  --c-placeholder: #71717a;
+  --c-checkbox-border: #d1d5db;
+  --c-error: #ef4444;
+  --c-error-ink: #dc2626;
+  --c-line: #dadada;
+  --c-bg: #ffffff;
+
+  /* Типографика */
+  --font-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  /* Раскладка */
+  --container: 1440px;
+  --gutter: 64px;
+  --hero-offset: 80px; /* отступ героя внутри контейнера: 144px - 64px */
+
+  /* Отступ полноширинных лент: равен левому полю контейнера на любой ширине.
+     100% считается от ширины секции, поэтому переменную можно использовать
+     только в элементах, растянутых на всю ширину. */
+  --track-inset: max(
+    var(--gutter),
+    calc((100% - var(--container)) / 2 + var(--gutter))
+  );
+
+  /* Радиусы */
+  --radius-pill: 48px;
+  --radius-chip: 80px;
+
+  /* Анимации */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.2s;
+  --dur-base: 0.35s;
+  --dur-slow: 0.5s;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 32px;
+    --hero-offset: 0px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 20px;
+  }
+}

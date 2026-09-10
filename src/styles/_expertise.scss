@@ -1,0 +1,273 @@
+/* ---------- Третий блок: «Вы эксперт в своём бизнесе» ---------- */
+.expertise {
+  /* отступ от предыдущего блока — 120px на десктопе */
+  padding-top: 120px;
+  /* отступ до следующего блока задаётся его padding-top */
+  padding-bottom: 0;
+}
+
+.expertise__inner {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* --- Фиолетовая панель --- */
+.expertise__banner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 307px;
+  padding: 72px 80px;
+  background: var(--c-brand);
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+/* размытый градиент из макета: выходит за панель и обрезается ею */
+.expertise__banner::before {
+  content: "";
+  position: absolute;
+  top: -37.91%;
+  right: -8.84%;
+  bottom: -37.91%;
+  left: -8.84%;
+  background: url("../assets/decor/panel-gradient.webp") center / 100% 100%
+    no-repeat;
+  pointer-events: none;
+}
+
+.expertise__decor {
+  position: absolute;
+  transform: rotate(90deg);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* уголок: прижат к верхнему краю панели, отступ справа 56px */
+.expertise__decor--quote {
+  top: 0;
+  right: 56px;
+  width: 112px;
+  height: 112px;
+}
+
+/* звезда: у левого края панели */
+.expertise__decor--star {
+  top: 155px;
+  left: 24px;
+  width: 128px;
+  height: 128px;
+}
+
+.expertise__banner-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1152px;
+}
+
+.expertise__title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 64px;
+  text-align: center;
+  color: #fff;
+}
+
+.expertise__rule {
+  width: 640px;
+  max-width: 100%;
+  height: 2px;
+  background: rgba(218, 218, 218, 0.2);
+}
+
+/* --- Светлая панель с пунктами --- */
+.expertise__panel {
+  /* заходит под фиолетовую панель на 72px, как в макете */
+  margin-top: -72px;
+  padding: 120px 32px 48px;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 48px;
+}
+
+.expertise__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 60px;
+}
+
+.point {
+  display: flex;
+  flex-direction: column;
+}
+
+.point__num {
+  margin-bottom: 24px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--c-brand);
+}
+
+.point__title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--c-chip-text);
+}
+
+.point__text {
+  max-width: 330px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--c-chip-text);
+}
+
+/* ---------- Уже макетных 1440: панель сужается ----------
+   Точная геометрия из Figma держится только на ширине макета.
+   Ниже уводим фигуры в углы, иначе заголовок на них наезжает. */
+@media (max-width: 1400px) {
+  .expertise__banner {
+    padding: 56px 48px;
+  }
+
+  .expertise__title {
+    font-size: clamp(26px, 3vw, 40px);
+    line-height: 1.35;
+  }
+
+  .expertise__rule {
+    max-width: 420px;
+  }
+
+  .expertise__decor--quote {
+    top: 0;
+    right: 12px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .expertise__decor--star {
+    top: auto;
+    bottom: 0;
+    left: 12px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  .expertise__list {
+    gap: 40px;
+  }
+
+  .point__text {
+    max-width: none;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .expertise {
+    /* отступ от предыдущего блока — 80px на мобильных */
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .expertise__banner {
+    min-height: 0;
+    /* 56px по вертикали — ровно под декор в углах, чтобы он не лез на текст */
+    padding: 56px 24px;
+    border-radius: 24px;
+  }
+
+  .expertise__title {
+    font-size: clamp(22px, 4.4vw, 34px);
+    line-height: 1.4;
+  }
+
+  .expertise__banner-content {
+    gap: 24px;
+  }
+
+  .expertise__rule {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .expertise__decor--quote {
+    top: 0;
+    right: 8px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .expertise__decor--star {
+    top: auto;
+    bottom: 0;
+    left: 8px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .expertise__panel {
+    margin-top: -40px;
+    padding: 72px 24px 32px;
+    border-radius: 24px;
+  }
+
+  .expertise__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  /* разделители между пунктами: 1-2 и 2-3 */
+  .point + .point {
+    padding-top: 32px;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .point__num {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .point__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  /* переносы из макета рассчитаны на широкую колонку */
+  .point__title br {
+    display: none;
+  }
+
+  .point__text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .expertise__panel {
+    padding-inline: 20px;
+  }
+
+  .expertise__banner {
+    padding-inline: 20px;
+  }
+}

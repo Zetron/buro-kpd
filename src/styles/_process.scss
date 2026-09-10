@@ -1,0 +1,286 @@
+/* ---------- Седьмой блок: «Как мы работаем» ---------- */
+.process {
+  /* отступ от предыдущего блока — 120px; margin, а не padding,
+     чтобы тёмная подложка начиналась после отступа */
+  margin-top: 120px;
+  padding-block: 96px;
+  background: var(--c-brand);
+}
+
+.process__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* --- Левая колонка --- */
+.process__aside {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 0 0 480px;
+}
+
+.process__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+}
+
+/* --- Карточка с метриками --- */
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--c-panel-dark);
+  border-radius: 16px;
+}
+
+.metric__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.metric__name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+}
+
+.metric__badge {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  background: var(--c-success);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+}
+
+.metric__chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 40px;
+}
+
+.metric__bar {
+  flex: 1 1 0;
+  min-width: 0;
+  background: var(--c-bar);
+  border-radius: 4px 4px 0 0;
+}
+
+.metric__bar:nth-child(1) {
+  height: 16px;
+  opacity: 0.3;
+}
+
+.metric__bar:nth-child(2) {
+  height: 28px;
+  opacity: 0.5;
+}
+
+.metric__bar:nth-child(3) {
+  height: 22px;
+  opacity: 0.7;
+}
+
+.metric__bar:nth-child(4) {
+  height: 36px;
+  opacity: 0.9;
+}
+
+.metric__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.metric__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  line-height: normal;
+}
+
+.metric__label {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.metric__value {
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* --- Таймлайн --- */
+.process__steps {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.step__indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 48px;
+}
+
+.step__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  background: var(--c-plum);
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+}
+
+/* линия тянется до следующего шага, даже если текст оказался выше макетного */
+.step__line {
+  flex: 1 0 auto;
+  min-height: 96px;
+  width: 2px;
+  background: var(--c-plum);
+}
+
+.step:last-child .step__line {
+  display: none;
+}
+
+.step__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-bottom: 36px;
+}
+
+.step:last-child .step__content {
+  padding-bottom: 0;
+}
+
+.step__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.step__text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  .process__inner {
+    gap: 48px;
+  }
+
+  .process__aside {
+    flex-basis: 360px;
+    gap: 32px;
+  }
+
+  .process__title {
+    font-size: 30px;
+  }
+
+  .step__title {
+    font-size: 18px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .process {
+    /* отступ от предыдущего блока — 80px на мобильных */
+    margin-top: 80px;
+    padding-block: 56px;
+  }
+
+  .process__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .process__aside {
+    position: static;
+    flex: 0 0 auto;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .process__title {
+    font-size: clamp(24px, 5.4vw, 30px);
+  }
+
+  .process__steps {
+    width: 100%;
+  }
+
+  .step {
+    gap: 16px;
+  }
+
+  .step__indicator {
+    flex-basis: 36px;
+  }
+
+  .step__badge {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .step__line {
+    min-height: 56px;
+  }
+
+  .step__content {
+    padding-bottom: 28px;
+  }
+
+  .step__title {
+    font-size: 17px;
+  }
+
+  .step__text {
+    font-size: 14px;
+  }
+}

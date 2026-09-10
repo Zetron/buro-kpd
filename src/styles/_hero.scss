@@ -1,0 +1,202 @@
+/* ---------- Первый экран ---------- */
+.hero {
+  /* отступ до следующего блока задаётся его padding-top */
+  padding-bottom: 0;
+}
+
+.hero__inner {
+  display: grid;
+  /* 640px = 80px отступ героя + 560px текстовой колонки (по макету) */
+  grid-template-columns: minmax(0, 640px) minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  padding-top: 88px;
+  padding-left: var(--hero-offset);
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero__title {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 42px;
+  color: var(--c-brand);
+}
+
+.hero__lead {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--c-muted);
+}
+
+.hero__media {
+  justify-self: end;
+  width: 744px;
+  /* картинка выходит в правый гаттер и слегка заходит на текстовую колонку */
+  max-width: calc(100% + 72px);
+  margin-top: 24px;
+  margin-right: -40px;
+  margin-left: -32px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+}
+
+/* Плашки, лежащие на разделительной линии */
+.hero__footer {
+  position: relative;
+  margin-top: 22px;
+}
+
+.hero__footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--c-line);
+}
+
+.chips {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-inline: var(--gutter);
+}
+
+.chip {
+  padding: 8px 16px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-chip);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--c-chip-text);
+  white-space: nowrap;
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 48%) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .hero__content {
+    padding-top: 48px;
+  }
+
+  .hero__media {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  /* переносы из макета рассчитаны на 1440 — ниже они мешают */
+  .hero__title br,
+  .hero__lead br {
+    display: none;
+  }
+
+  /* плашки переносятся на две строки — линию убираем под них */
+  .hero__footer {
+    margin-top: 40px;
+  }
+
+  .hero__footer::before {
+    top: auto;
+    bottom: -24px;
+  }
+
+  .chip {
+    white-space: normal;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .hero__content {
+    padding-top: 24px;
+    gap: 24px;
+  }
+
+  .hero__title {
+    font-size: clamp(26px, 5vw, 34px);
+    line-height: 1.24;
+  }
+
+  .hero__lead {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .btn--hero {
+    width: 100%;
+    font-size: 17px;
+    padding: 14px 18px;
+  }
+
+  .hero__media {
+    margin-top: 8px;
+    margin-left: 0;
+    margin-right: 0;
+    justify-self: center;
+    width: 100%;
+  }
+
+  /* линия сверху, плашки — колонкой под ней */
+  .hero__footer {
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+
+  .hero__footer::before {
+    top: 0;
+    bottom: auto;
+  }
+
+  .chips {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .chip {
+    flex: 0 0 auto;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}

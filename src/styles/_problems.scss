@@ -1,0 +1,143 @@
+/* ---------- Второй блок: «Вы здесь, потому что» ---------- */
+.problems {
+  /* отступ от первого блока — 120px на десктопе */
+  padding-top: 120px;
+  /* отступ до следующего блока задаётся его padding-top */
+  padding-bottom: 0;
+}
+
+.problems__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.problems__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  color: var(--c-brand);
+}
+
+.problems__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.problem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+  padding: 24px;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 24px;
+  transition: transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.problem:hover {
+  transform: translateY(-4px);
+  border-color: rgba(90, 56, 83, 0.18);
+  box-shadow: 0 18px 40px -24px rgba(90, 56, 83, 0.45);
+}
+
+.problem__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.problem__icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.problem__icon--1 {
+  background: var(--c-accent-1);
+}
+
+.problem__icon--2 {
+  background: var(--c-accent-2);
+}
+
+.problem__icon--3 {
+  background: var(--c-accent-3);
+}
+
+.problem__text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--c-chip-text);
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  .problems__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .problems__title {
+    font-size: 32px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .problems {
+    /* отступ от первого блока — 80px на мобильных */
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .problems__inner {
+    gap: 24px;
+  }
+
+  .problems__title {
+    font-size: clamp(24px, 5.4vw, 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .problems__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .problem {
+    min-height: 0;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .problem__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .problem__icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .problem__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

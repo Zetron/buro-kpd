@@ -1,0 +1,185 @@
+/* ---------- Одиннадцатый блок: «Важные вопросы перед стартом» ---------- */
+.faq {
+  /* отступ от предыдущего блока — 120px на десктопе */
+  padding-top: 120px;
+  /* отступ до следующего блока задаётся его padding-top */
+  padding-bottom: 0;
+}
+
+/* блок уже общего контейнера: 1088px контента при ширине макета */
+.faq__inner {
+  width: 100%;
+  max-width: calc(1088px + var(--gutter) * 2);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.faq__head-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.faq__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+.faq__subtitle {
+  max-width: 528px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--c-muted);
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Вопрос --- */
+.faq__item {
+  padding-block: 24px;
+  border-top: 1px solid var(--c-line);
+}
+
+.faq__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* убираем стандартный маркер <details> */
+.faq__head::-webkit-details-marker {
+  display: none;
+}
+
+.faq__q {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--c-brand);
+  transition: color var(--dur-fast) ease;
+}
+
+.faq__head:hover .faq__q {
+  color: var(--c-accent-2);
+}
+
+/* Плюс/минус из макета собран на псевдоэлементах:
+   при открытии вертикальная палочка схлопывается, цвет меняется на акцентный */
+.faq__icon {
+  position: relative;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11.67px;
+  height: 2px;
+  background: var(--c-muted);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) ease;
+}
+
+.faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* .is-closing вешает JS на время анимации закрытия:
+   иконка возвращается в «плюс» сразу, а не после схлопывания */
+.faq__item[open]:not(.is-closing) .faq__icon::before,
+.faq__item[open]:not(.is-closing) .faq__icon::after {
+  background: var(--c-accent-2);
+}
+
+.faq__item[open]:not(.is-closing) .faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+}
+
+.faq__body {
+  padding-top: 8px;
+}
+
+.faq__a {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--c-chip-text);
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  .faq__title {
+    font-size: 32px;
+  }
+
+  .faq__subtitle {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .faq {
+    /* отступ от предыдущего блока — 80px на мобильных */
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .faq__head-block {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .faq__title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .faq__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .faq__item {
+    padding-block: 20px;
+  }
+
+  .faq__head {
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .faq__q {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .faq__icon {
+    margin-top: 2px;
+  }
+
+  .faq__a {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

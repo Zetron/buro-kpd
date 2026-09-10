@@ -1,0 +1,262 @@
+/* ---------- Восьмой блок: «Кто с вами работает» ---------- */
+.team {
+  /* отступ от предыдущего блока — 120px на десктопе */
+  padding-top: 120px;
+  /* отступ до следующего блока задаётся его padding-top */
+  padding-bottom: 0;
+}
+
+.team__inner {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.team__head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.team__title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+.team__subtitle {
+  max-width: 860px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--c-muted);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* --- Карточка эксперта --- */
+.expert {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 24px;
+}
+
+.expert__head {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.expert__photo {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.expert__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* кадрирование второго фото из макета */
+.expert__photo--crop img {
+  position: absolute;
+  top: -1.01%;
+  left: 0;
+  height: 126.18%;
+}
+
+.expert__ident {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.expert__name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+.expert__role {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-plum);
+}
+
+.expert__bio {
+  min-height: 96px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--c-chip-text);
+}
+
+.expert__divider {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--c-border);
+}
+
+.expert__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.expert__caption {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  color: var(--c-brand);
+}
+
+.expert__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expert__item {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--c-chip-text);
+}
+
+/* маркер из макета: кружок r=3 в поле 16px, центр на 7px сверху */
+.expert__item::before {
+  content: "";
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  margin: 4px 5px 0;
+  background: var(--c-brand);
+  border-radius: 50%;
+}
+
+.expert__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expert__tag {
+  padding: 6px 10px;
+  background: var(--c-tag-bg);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1200px) {
+  .team__title {
+    font-size: 32px;
+  }
+
+  .team__subtitle {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .expert {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .expert__name {
+    font-size: 22px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .team {
+    /* отступ от предыдущего блока — 80px на мобильных */
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .team__head {
+    margin-bottom: 24px;
+  }
+
+  .team__title {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .team__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .team__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .expert__head {
+    gap: 16px;
+  }
+
+  .expert__photo {
+    width: 88px;
+    height: 88px;
+  }
+
+  .expert__name {
+    font-size: 20px;
+  }
+
+  .expert__role {
+    font-size: 14px;
+  }
+
+  /* высота под текст нужна только чтобы выровнять разделители в двух колонках */
+  .expert__bio {
+    min-height: 0;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .expert {
+    padding: 20px;
+  }
+
+  .expert__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

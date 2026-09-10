@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* переходы по якорям — плавные; в блоке prefers-reduced-motion ниже сбрасывается */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* блокировка скролла при открытом меню */
+body.is-locked {
+  overflow: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-brand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* якорные переходы не должны прятать заголовок под липкой шапкой */
+section[id] {
+  scroll-margin-top: 104px;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  line-height: normal;
+  transition: background-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+  will-change: transform;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--pill {
+  padding: 9px 18px;
+  background: var(--c-brand);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.btn--pill:hover {
+  background: var(--c-brand-hover);
+}
+
+.btn--hero {
+  gap: 8px;
+  padding: 13px 16px;
+  background: var(--c-brand);
+  border: 2px solid var(--c-brand-border);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.btn--hero:hover {
+  background: var(--c-brand-hover);
+  box-shadow: 0 10px 24px -12px rgba(90, 56, 83, 0.6);
+}
+
+.btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 40px;
+  overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.btn__icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn--hero:hover .btn__icon {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

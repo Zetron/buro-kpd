@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бюро КПД — аудит ролей, ФОТ и KPI</title>
+  <meta name="description" content="Аудит ролей, ФОТ и KPI. Пересобираем структуру вручную и передаём готовую систему: регламенты, KPI, таблицы и зоны ответственности." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+  <header class="header" data-node-id="116:117">
+    <div class="header__inner">
+      <a class="header__logo" href="#top">Бюро КПД</a>
+
+      <nav class="nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li class="nav__item" style="--i:0"><a class="nav__link" href="#about">Бюро КПД</a></li>
+          <li class="nav__item" style="--i:1"><a class="nav__link" href="#tools">Инструменты</a></li>
+          <li class="nav__item" style="--i:2"><a class="nav__link" href="#team">Кто мы</a></li>
+          <li class="nav__item" style="--i:3"><a class="nav__link" href="#pricing">Тарифы</a></li>
+          <li class="nav__item" style="--i:4"><a class="nav__link" href="#reviews">Отзывы</a></li>
+        </ul>
+        <div class="nav__footer" style="--i:5">
+          <a class="btn btn--pill nav__cta" href="#contact">Консультация</a>
+        </div>
+      </nav>
+
+      <a class="btn btn--pill header__cta" href="#contact">Консультация</a>
+
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+        <span class="burger__box" aria-hidden="true">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" hidden></div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              Покажем, кто из вашей команды реально работает,<br />
+              а кто только числится
+            </h1>
+            <p class="hero__lead">
+              Аудит ролей, ФОТ и KPI. Пересобираем структуру вручную<br />
+              и передаём готовую систему: регламенты, KPI, таблицы и зоны
+              ответственности. Без долгих внедрений и постоянного консалтинга.
+            </p>
+          </div>
+
+          <a class="btn btn--hero" href="#contact">
+            <span class="btn__icon">
+              <img src="/src/assets/icons/arrow.svg" alt="" width="24" height="24" />
+            </span>
+            Бесплатная консультация
+          </a>
+        </div>
+
+        <div class="hero__media">
+          <picture>
+            <source srcset="/src/assets/img/hero.webp" type="image/webp" />
+            <img
+              class="hero__image"
+              src="/src/assets/img/hero.png"
+              alt="Дашборды с аналитикой по ролям, ФОТ и KPI"
+              width="744"
+              height="496"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
+      </div>
+
+      <div class="hero__footer">
+        <ul class="chips">
+          <li class="chip">Для бизнеса 50–500 человек</li>
+          <li class="chip">Москва, Санкт-Петербург, регионы</li>
+          <li class="chip">От часовой консультации до полной пересборки</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="problems" data-node-id="1:984">
+      <div class="problems__inner">
+        <h2 class="problems__title" data-node-id="1:1106">Вы здесь, потому что</h2>
+
+        <ul class="problems__grid" data-node-id="2:4">
+          <li class="problem" data-node-id="2:6">
+            <span class="problem__icon problem__icon--1">
+              <img src="/src/assets/icons/trending-down.svg" alt="" width="32" height="32" aria-hidden="true" />
+            </span>
+            <p class="problem__text">Выручка растёт медленнее, чем фонд оплаты труда. ФОТ за три года вырос в полтора раза, прибыль - нет</p>
+          </li>
+          <li class="problem" data-node-id="2:10">
+            <span class="problem__icon problem__icon--2">
+              <img src="/src/assets/icons/users.svg" alt="" width="32" height="32" aria-hidden="true" />
+            </span>
+            <p class="problem__text">В табеле 100+ человек, а вы уже не понимаете, без кого можно завтра обойтись, а кто реально приносит результат</p>
+          </li>
+          <li class="problem" data-node-id="2:14">
+            <span class="problem__icon problem__icon--3">
+              <img src="/src/assets/icons/credit-card.svg" alt="" width="32" height="32" aria-hidden="true" />
+            </span>
+            <p class="problem__text">Каждый месяц подписываете премии, не понимая, за что именно платите</p>
+          </li>
+          <li class="problem" data-node-id="2:19">
+            <span class="problem__icon problem__icon--1">
+              <img src="/src/assets/icons/shield-off.svg" alt="" width="32" height="32" aria-hidden="true" />
+            </span>
+            <p class="problem__text">Когда что-то идёт не так - никто не берёт ответственность, все спихивают друг на друга</p>
+          </li>
+          <li class="problem" data-node-id="2:23">
+            <span class="problem__icon problem__icon--2">
+              <img src="/src/assets/icons/briefcase.svg" alt="" width="32" height="32" aria-hidden="true" />
+            </span>
+            <p class="problem__text">Уже нанимали HR-директора или ходили на курсы по управлению - лучше не стало</p>
+          </li>
+          <li class="problem" data-node-id="2:27">
+            <span class="problem__icon problem__icon--3">
+              <img src="/src/assets/icons/layers.svg" alt="" width="32" height="32" aria-hidden="true" />
+            </span>
+            <p class="problem__text">Поняли, что в одиночку оргструктуру не пересоберёте - а внутри некому</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="expertise" data-node-id="1:660">
+      <div class="expertise__inner">
+        <div class="expertise__banner" data-node-id="1:663">
+          <img
+            class="expertise__decor expertise__decor--quote"
+            src="/src/assets/decor/quote.svg"
+            alt=""
+            aria-hidden="true"
+            width="112"
+            height="112"
+          />
+          <img
+            class="expertise__decor expertise__decor--star"
+            src="/src/assets/decor/star.svg"
+            alt=""
+            aria-hidden="true"
+            width="128"
+            height="128"
+          />
+
+          <div class="expertise__banner-content" data-node-id="10:6">
+            <h2 class="expertise__title" data-node-id="1:666">
+              Вы эксперт в своём бизнесе. Не обязаны быть экспертом в построении
+              команды
+            </h2>
+            <span class="expertise__rule" data-node-id="1:665"></span>
+          </div>
+        </div>
+
+        <div class="expertise__panel">
+          <ol class="expertise__list" data-node-id="10:15">
+          <li class="point" data-node-id="10:20">
+            <span class="point__num">01</span>
+            <h3 class="point__title">Свой продукт, рынок <br />и клиентов вы знаете лучше всех</h3>
+            <p class="point__text">Иначе компания не выросла бы до 100+ человек</p>
+          </li>
+          <li class="point" data-node-id="10:21">
+            <span class="point__num">02</span>
+            <h3 class="point__title">Построение эффективной <br />команды это отдельная профессия</h3>
+            <p class="point__text">В ней не стыдно не быть специалистом. Так же как в бухгалтерии или налоговом праве</p>
+          </li>
+          <li class="point" data-node-id="10:27">
+            <span class="point__num">03</span>
+            <h3 class="point__title">Мы в этом <br />специализируемся</h3>
+            <p class="point__text">Подскажем, что делать, кого нанимать, на что смотреть при оценке текущих людей</p>
+          </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="about" data-node-id="1:716">
+      <div class="approach__inner">
+        <div class="approach__head" data-node-id="1:717">
+          <span class="approach__badge" data-node-id="1:718">Бюро КПД</span>
+          <h2 class="approach__title" data-node-id="1:720">
+            Команда — это актив, который должен окупаться
+          </h2>
+        </div>
+
+        <div class="approach__feature" data-node-id="1:721">
+          <p class="approach__feature-text" data-node-id="1:729">
+            Любое наше решение можно проверить на цифрах. Если не понятна
+            логика расчёта — значит, решение плохое
+          </p>
+
+          <picture class="approach__feature-media">
+            <source srcset="/src/assets/img/proof.webp" type="image/webp" />
+            <img
+              src="/src/assets/img/proof.png"
+              alt="Руки с отчётами, графиками и лупой"
+              width="542"
+              height="361"
+            />
+          </picture>
+        </div>
+
+        <ul class="approach__cards">
+          <li class="acard" data-node-id="1:723">
+            <p class="acard__title">
+              У вас остаются рабочие таблицы, регламенты и система управления
+            </p>
+            <p class="acard__note">
+              Не папка с презентациями, которую никто не откроет через неделю
+            </p>
+            <div class="acard__media acard__media--papers">
+              <picture>
+                <source srcset="/src/assets/img/report.webp" type="image/webp" />
+                <img src="/src/assets/img/report.png" alt="Отчёт с таблицами и графиками" />
+              </picture>
+            </div>
+          </li>
+
+          <li class="acard" data-node-id="1:725">
+            <p class="acard__title">После проекта вы работаете самостоятельно</p>
+            <p class="acard__note">
+              Наша задача — сделать так, чтобы через месяц после проекта вы не
+              нуждались в нас каждый день
+            </p>
+            <div class="acard__media acard__media--chart">
+              <img src="/src/assets/decor/growth-chart.svg" alt="" aria-hidden="true" />
+            </div>
+          </li>
+
+          <li class="acard" data-node-id="1:728">
+            <p class="acard__title">
+              До старта показываем, где видим потери и сколько денег можно
+              вернуть в бизнес
+            </p>
+            <p class="acard__note">
+              Цифру вы видите до того, как принимаете решение о покупке
+            </p>
+            <div class="acard__media acard__media--ruble">
+              <span class="acard__coin">
+                <img src="/src/assets/icons/ruble.svg" alt="" aria-hidden="true" width="66" height="66" />
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="frameworks" id="tools" data-node-id="1:672">
+      <div class="frameworks__inner">
+        <h2 class="frameworks__title" data-node-id="1:675">
+          С чем мы работаем — фреймворки и методологии
+        </h2>
+
+        <div class="frameworks__meta">
+          <p class="frameworks__subtitle" data-node-id="33:3">
+            За плечами — отработанная методология, которую применяли
+            в EdTech-стартапах, IT и строительных компаниях.
+          </p>
+
+          <div class="frameworks__nav" data-node-id="1:676">
+            <button class="cbtn" type="button" data-carousel="prev" aria-label="Предыдущие карточки" aria-controls="frameworks-track">
+              <img src="/src/assets/icons/arrow-prev.svg" alt="" aria-hidden="true" width="48" height="48" />
+            </button>
+            <button class="cbtn" type="button" data-carousel="next" aria-label="Следующие карточки" aria-controls="frameworks-track">
+              <img src="/src/assets/icons/arrow-next.svg" alt="" aria-hidden="true" width="48" height="48" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <ul class="frameworks__track" id="frameworks-track" tabindex="0" aria-label="Фреймворки и методологии">
+        <li class="slide slide--1" data-node-id="1:683">
+          <picture class="slide__media">
+            <source srcset="/src/assets/img/frameworks/metrics.webp" type="image/webp" />
+            <img src="/src/assets/img/frameworks/metrics.png" alt="Схема дерева HR-метрик" loading="lazy" />
+          </picture>
+          <div class="slide__body">
+            <p class="slide__title">Дерево HR-метрик</p>
+            <p class="slide__text">Каскад метрик от выручки бизнеса до показателей каждой роли</p>
+          </div>
+        </li>
+        <li class="slide slide--2" data-node-id="1:698">
+          <picture class="slide__media">
+            <source srcset="/src/assets/img/frameworks/icf.webp" type="image/webp" />
+            <img src="/src/assets/img/frameworks/icf.png" alt="Схема карты компетенций" loading="lazy" />
+          </picture>
+          <div class="slide__body">
+            <p class="slide__title">Карта компетенций по ICF</p>
+            <p class="slide__text">Структурированная оценка soft и hard-навыков middle-менеджмента</p>
+          </div>
+        </li>
+        <li class="slide slide--3" data-node-id="1:684">
+          <picture class="slide__media">
+            <source srcset="/src/assets/img/frameworks/jtbd.webp" type="image/webp" />
+            <img src="/src/assets/img/frameworks/jtbd.png" alt="Схема подхода JTBD" loading="lazy" />
+          </picture>
+          <div class="slide__body">
+            <p class="slide__title">JTBD для ролей</p>
+            <p class="slide__text">Подход Jobs To Be Done применяем к функциям внутри компании</p>
+          </div>
+        </li>
+        <li class="slide slide--4" data-node-id="1:703">
+          <picture class="slide__media">
+            <source srcset="/src/assets/img/frameworks/culture.webp" type="image/webp" />
+            <img src="/src/assets/img/frameworks/culture.png" alt="Схема дата-драйвен подхода" loading="lazy" />
+          </picture>
+          <div class="slide__body">
+            <p class="slide__title">Дата-драйвен <br />подход к культуре</p>
+            <p class="slide__text">eNPS, индекс вовлечённости, mNPS, дашборды в реальном времени</p>
+          </div>
+        </li>
+        <li class="slide slide--5" data-node-id="52:47">
+          <picture class="slide__media">
+            <source srcset="/src/assets/img/frameworks/automation.webp" type="image/webp" />
+            <img src="/src/assets/img/frameworks/automation.png" alt="Схема автоматизации HR-процессов" loading="lazy" />
+          </picture>
+          <div class="slide__body">
+            <p class="slide__title">Автоматизация HR-процессов</p>
+            <p class="slide__text">Внедряем ATS, HR-дашборды, системы оценки в компаниях от 50 до 250+ человек</p>
+          </div>
+        </li>
+        <li class="slide slide--6" data-node-id="53:60">
+          <picture class="slide__media">
+            <source srcset="/src/assets/img/frameworks/benchmarks.webp" type="image/webp" />
+            <img src="/src/assets/img/frameworks/benchmarks.png" alt="Схема бенчмарков рынка" loading="lazy" />
+          </picture>
+          <div class="slide__body">
+            <p class="slide__title">Бенчмарки рынка по ФОТ</p>
+            <p class="slide__text">Сверяем ваши зарплаты с рыночными данными по 5+ отраслям</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="gains" data-node-id="1:624">
+      <div class="gains__inner">
+        <h2 class="gains__title" data-node-id="1:625">
+          После работы с нами <br />у вас на руках
+        </h2>
+
+        <div class="gains__grid">
+          <div class="gains__col">
+            <article class="gain gain--motivation" data-node-id="1:628">
+              <picture class="gain__avatar">
+                <source srcset="/src/assets/img/gains/avatar.webp" type="image/webp" />
+                <img src="/src/assets/img/gains/avatar.png" alt="" aria-hidden="true" width="80" height="80" loading="lazy" />
+              </picture>
+              <p class="gain__text">
+                Рабочая модель мотивации, премии привязаны к результату
+                и сезонности
+              </p>
+            </article>
+
+            <article class="gain gain--payroll" data-node-id="1:634">
+              <div class="gain__media gain__media--money">
+                <picture>
+                  <source srcset="/src/assets/img/gains/money.webp" type="image/webp" />
+                  <img src="/src/assets/img/gains/money.png" alt="" aria-hidden="true" loading="lazy" />
+                </picture>
+              </div>
+              <p class="gain__text">
+                Прозрачная картина по ФОТ, сколько и кому платите, за что именно
+              </p>
+            </article>
+
+            <article class="gain gain--churn" data-node-id="1:646">
+              <p class="gain__text gain__text--lg">
+                Разберетесь почему уходят ключевые специалисты
+              </p>
+            </article>
+          </div>
+
+          <div class="gains__mid">
+            <div class="gains__mid-top">
+              <div class="gains__col">
+                <article class="gain gain--rules" data-node-id="1:648">
+                  <img
+                    class="gain__icon"
+                    src="/src/assets/icons/check.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width="40"
+                    height="40"
+                  />
+                  <p class="gain__text">
+                    Регламенты и должностные инструкции, которыми реально
+                    пользуются
+                  </p>
+                </article>
+
+                <article class="gain gain--kpi" data-node-id="1:643">
+                  <p class="gain__text">
+                    Система KPI по каждой роли, привязана к выручке или
+                    конкретному действию
+                  </p>
+                  <p class="gain__badge">KPI OKR</p>
+                </article>
+              </div>
+
+              <div class="gains__col">
+                <article class="gain gain--assessment" data-node-id="1:631">
+                  <p class="gain__text gain__text--md">
+                    Оценка middle-менеджмента. По каждому руководителю понятно,
+                    что с ним делать
+                  </p>
+                  <picture class="gain__media gain__media--team">
+                    <source srcset="/src/assets/img/gains/team.webp" type="image/webp" />
+                    <img src="/src/assets/img/gains/team.png" alt="" aria-hidden="true" loading="lazy" />
+                  </picture>
+                </article>
+              </div>
+            </div>
+
+            <article class="gain gain--wide" data-node-id="1:657">
+              <p class="gain__text gain__text--xl">
+                Разберетесь в самых эффективных инструментах привлечения и
+                <span class="gain__mark">удержания талантов</span>
+              </p>
+            </article>
+          </div>
+
+          <div class="gains__col">
+            <article class="gain gain--offer" data-node-id="1:637">
+              <div class="gain__media gain__media--offer">
+                <picture>
+                  <source srcset="/src/assets/img/gains/offer.webp" type="image/webp" />
+                  <img src="/src/assets/img/gains/offer.png" alt="" aria-hidden="true" loading="lazy" />
+                </picture>
+              </div>
+              <p class="gain__text gain__text--lg">
+                Сформируете лучший оффер на рынке труда
+              </p>
+            </article>
+
+            <article class="gain gain--roles" data-node-id="1:640">
+              <picture class="gain__media gain__media--roles">
+                <source srcset="/src/assets/img/gains/roles.webp" type="image/webp" />
+                <img src="/src/assets/img/gains/roles.png" alt="" aria-hidden="true" loading="lazy" />
+              </picture>
+              <p class="gain__text gain__text--lg">
+                Карта ролей и зон ответственности
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" data-node-id="25:83">
+      <div class="process__inner">
+        <div class="process__aside" data-node-id="25:85">
+          <h2 class="process__title" data-node-id="25:88">
+            Как мы работаем: 8 шагов от хаоса к понятной системе управления
+          </h2>
+
+          <div class="metric" data-node-id="25:89">
+            <div class="metric__head">
+              <p class="metric__name">Оценка структуры &amp; ФОТ</p>
+              <span class="metric__badge">Стабильно</span>
+            </div>
+
+            <div class="metric__chart" aria-hidden="true">
+              <span class="metric__bar"></span>
+              <span class="metric__bar"></span>
+              <span class="metric__bar"></span>
+              <span class="metric__bar"></span>
+            </div>
+
+            <dl class="metric__stats">
+              <div class="metric__row">
+                <dt class="metric__label">Прозрачность структуры</dt>
+                <dd class="metric__value">92%</dd>
+              </div>
+              <div class="metric__row">
+                <dt class="metric__label">Окупаемость ФОТ</dt>
+                <dd class="metric__value">x2.4 от инвестиций</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <ol class="process__steps" data-node-id="25:110">
+          <li class="step" data-node-id="25:111">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">01</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Разбираемся, как всё устроено сейчас</h3>
+              <p class="step__text">Смотрим структуру, роли, ФОТ и общую картину. Говорим с вами и ключевыми людьми.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:119">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">02</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Показываем реальную картину</h3>
+              <p class="step__text">Чаще всего она отличается от формальной оргсхемы: где-то дубли, где-то пустые зоны ответственности.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:127">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">03</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Смотрим на деньги</h3>
+              <p class="step__text">Аудит ФОТ и мотивации. Сверяем зарплаты с рынком, проверяем привязку премий к результату, считаем, где ФОТ съедает выручку без отдачи.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:135">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">04</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Оценка middle-менеджмента</h3>
+              <p class="step__text">Через интервью, тесты и наблюдение разбираем каждого руководителя: уровень компетенций, потенциал, риски для команды.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:143">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">05</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Собираем новую структуру</h3>
+              <p class="step__text">Убираем лишнее, фиксируем ответственность, упрощаем управление.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:151">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">06</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Настраиваем KPI и мотивацию</h3>
+              <p class="step__text">Прописываем KPI по каждой роли, готовим регламенты и должностные, собираем модель мотивации с привязкой к результату.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:159">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">07</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Передаём систему</h3>
+              <p class="step__text">Сводим все документы в один пакет, обучаем команду пользоваться.</p>
+            </div>
+          </li>
+          <li class="step" data-node-id="25:167">
+            <div class="step__indicator" aria-hidden="true">
+              <span class="step__badge">08</span>
+              <span class="step__line"></span>
+            </div>
+            <div class="step__content">
+              <h3 class="step__title">Помогаем внедрить</h3>
+              <p class="step__text">Поддерживаем при внедрении, отвечаем на вопросы, точечно корректируем процессы. Это гарантийный период, после которого вы работаете без нас.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="team" id="team" data-node-id="63:5">
+      <div class="team__inner">
+        <div class="team__head" data-node-id="63:6">
+          <h2 class="team__title" data-node-id="63:11">Кто с вами работает</h2>
+          <p class="team__subtitle" data-node-id="63:12">
+            Два со-основателя бюро. Работали вместе с 2021 года — сначала
+            в EdTech-стартапе Refocus, потом в Юнидрафте (250+ человек).
+            Сейчас сосредоточены на Бюро КПД.
+          </p>
+        </div>
+
+        <div class="team__grid" data-node-id="63:13">
+          <article class="expert" data-node-id="63:14">
+            <div class="expert__head">
+              <picture class="expert__photo">
+                <source srcset="/src/assets/img/team/victoria.webp" type="image/webp" />
+                <img src="/src/assets/img/team/victoria.jpg" alt="Виктория Царапкина" width="120" height="120" loading="lazy" />
+              </picture>
+              <div class="expert__ident">
+                <h3 class="expert__name">Виктория Царапкина</h3>
+                <p class="expert__role">Со-основатель, главный эксперт по HR-стратегии</p>
+              </div>
+            </div>
+
+            <p class="expert__bio">HRD с 8+ годами опыта. Строила HR-функции с нуля в строительстве, EdTech и IT. Фокус на корпоративной культуре, HR-аналитике и управлении эффективностью команд.</p>
+
+            <hr class="expert__divider" />
+
+            <div class="expert__section">
+              <h4 class="expert__caption">Ключевые результаты и опыт</h4>
+              <ul class="expert__list">
+                <li class="expert__item">8+ лет в HR — от HR Project Manager до HRD</li>
+                <li class="expert__item">Снизила текучесть в 4 раза</li>
+                <li class="expert__item">Сократила сроки закрытия вакансий на 35%</li>
+                <li class="expert__item">Снизила затраты на рекрутинг на 40%</li>
+                <li class="expert__item">Построила HR-функции с нуля в 3 компаниях</li>
+                <li class="expert__item">Отрасли: строительство, EdTech, IT, исследования</li>
+              </ul>
+            </div>
+
+            <hr class="expert__divider" />
+
+            <div class="expert__section">
+              <h4 class="expert__caption">Проекты и компании</h4>
+              <ul class="expert__tags">
+                <li class="expert__tag">Юнидрафт (HRD)</li>
+                <li class="expert__tag">Refocus Limited</li>
+                <li class="expert__tag">Mile Group</li>
+                <li class="expert__tag">Франчбук</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="expert" data-node-id="63:61">
+            <div class="expert__head">
+              <picture class="expert__photo expert__photo--crop">
+                <source srcset="/src/assets/img/team/ekaterina.webp" type="image/webp" />
+                <img src="/src/assets/img/team/ekaterina.jpg" alt="Екатерина Кирбасова" width="120" height="120" loading="lazy" />
+              </picture>
+              <div class="expert__ident">
+                <h3 class="expert__name">Екатерина Кирбасова</h3>
+                <p class="expert__role">Со-основатель, продуктовый эксперт</p>
+              </div>
+            </div>
+
+            <p class="expert__bio">Продакт-менеджер с фокусом на HR-tech. Запускала HR-продукты внутри компаний от EdTech-стартапа до строительной группы на 250 человек. Превращает HR-процессы в системы с метриками и дашбордами.</p>
+
+            <hr class="expert__divider" />
+
+            <div class="expert__section">
+              <h4 class="expert__caption">Ключевые результаты и опыт</h4>
+              <ul class="expert__list">
+                <li class="expert__item">3+ года в HR-tech и EdTech</li>
+                <li class="expert__item">Сократила Time-to-Productivity инженеров с 18 до 13 недель → экономия ≈3.3 млн ₽/год</li>
+                <li class="expert__item">Снизила текучесть на 18 п.п. через удержание → экономия ≈9.3 млн ₽/год</li>
+                <li class="expert__item">Снизила стоимость найма массовых ролей на 63%</li>
+                <li class="expert__item">Построила систему сквозных HR-дашбордов</li>
+                <li class="expert__item">Запустила системы ассессмента, базы знаний, мониторинга культуры</li>
+              </ul>
+            </div>
+
+            <hr class="expert__divider" />
+
+            <div class="expert__section">
+              <h4 class="expert__caption">Проекты и компании</h4>
+              <ul class="expert__tags">
+                <li class="expert__tag">Юнидрафт (Product HR)</li>
+                <li class="expert__tag">Skillbox</li>
+                <li class="expert__tag">Refocus Limited</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers" id="pricing" data-node-id="84:187">
+      <div class="offers__bg" aria-hidden="true" data-node-id="85:303">
+        <picture>
+          <source srcset="/src/assets/img/office.webp" type="image/webp" />
+          <img src="/src/assets/img/office.jpg" alt="" loading="lazy" />
+        </picture>
+      </div>
+
+      <div class="offers__inner">
+        <div class="offers__head" data-node-id="84:189">
+          <h2 class="offers__title" data-node-id="84:190">
+            Три способа начать работу с нами
+          </h2>
+          <p class="offers__subtitle" data-node-id="84:191">
+            Не нужно сразу заходить в большой проект. Выберите формат, <br />
+            исходя из того, насколько чётко уже сформулирован ваш запрос
+          </p>
+        </div>
+
+        <div class="offers__row" data-node-id="84:192">
+          <article class="offer" data-node-id="84:193">
+            <div class="offer__top">
+              <div class="offer__badges">
+                <p class="offer__label">Старт</p>
+                <span class="offer__badge offer__badge--free">Бесплатно</span>
+              </div>
+
+              <div class="offer__titles">
+                <h3 class="offer__name">Бесплатная консультация</h3>
+                <p class="offer__tagline">Первичный разбор вашей оргструктуры</p>
+              </div>
+
+              <hr class="offer__divider" />
+
+              <div class="offer__attrs">
+                <div class="offer__attr">
+                  <p class="offer__caption">Зачем это нужно:</p>
+                  <p class="offer__why">Разобрать текущую ситуацию, понять узкие места в управлении и определить, есть ли вообще запрос на нашу работу.</p>
+                </div>
+
+                <div class="offer__attr">
+                  <p class="offer__caption">Что в итоге:</p>
+                  <ul class="offer__list">
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Карта первых быстрых решений</span></li>
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Понимание, к какому продукту идти дальше</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer__bottom">
+              <div class="offer__meta">
+                <p class="offer__term"><span class="offer__term-label">Срок:</span> <span class="offer__term-value">30–45 минут</span></p>
+                <p class="offer__price offer__price--free">0 ₽</p>
+              </div>
+              <a class="offer__cta offer__cta--solid" href="#contact">Записаться бесплатно</a>
+            </div>
+          </article>
+
+          <article class="offer" data-node-id="84:226">
+            <div class="offer__top">
+              <div class="offer__badges">
+                <p class="offer__label">Диагностика</p>
+
+              </div>
+
+              <div class="offer__titles">
+                <h3 class="offer__name">Экспресс-аудит</h3>
+                <p class="offer__tagline">Точечный анализ эффективности ФОТ</p>
+              </div>
+
+              <hr class="offer__divider" />
+
+              <div class="offer__attrs">
+                <div class="offer__attr">
+                  <p class="offer__caption">Зачем это нужно:</p>
+                  <p class="offer__why">Точечная диагностика 3–5 ключевых болевых точек бизнеса с конкретными цифрами, окупаемостью и бенчмарками рынка.</p>
+                </div>
+
+                <div class="offer__attr">
+                  <p class="offer__caption">Что в итоге:</p>
+                  <ul class="offer__list">
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Детализированный отчёт на 10–15 страниц</span></li>
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Понятные приоритеты изменений</span></li>
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Реалистичная оценка экономии ФОТ</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer__bottom">
+              <div class="offer__meta">
+                <p class="offer__term"><span class="offer__term-label">Срок:</span> <span class="offer__term-value">1–2 недели</span></p>
+                <p class="offer__price">По запросу</p>
+              </div>
+              <a class="offer__cta offer__cta--outline" href="#contact">Обсудить условия</a>
+            </div>
+          </article>
+
+          <article class="offer offer--featured" data-node-id="84:260">
+            <div class="offer__top">
+              <div class="offer__badges">
+                <p class="offer__label offer__label--bold">Комплексное решение</p>
+                <span class="offer__badge offer__badge--pop">Популярно</span>
+              </div>
+
+              <div class="offer__titles">
+                <h3 class="offer__name">КПД 60 / Конструктор</h3>
+                <p class="offer__tagline">Полная системная пересборка HR</p>
+              </div>
+
+              <hr class="offer__divider" />
+
+              <div class="offer__attrs">
+                <div class="offer__attr">
+                  <p class="offer__caption">Зачем это нужно:</p>
+                  <p class="offer__why">Полная ручная пересборка структуры компании, регламентов, KPI и мотивации сотрудников — под ключ или отдельными модулями.</p>
+                </div>
+
+                <div class="offer__attr">
+                  <p class="offer__caption">Что в итоге:</p>
+                  <ul class="offer__list">
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Готовая работающая оргсхема</span></li>
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Понятные регламенты и зоны ответственности</span></li>
+                    <li class="offer__item"><img class="offer__check" src="/src/assets/icons/check-fill.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Прозрачные KPI и финансовая мотивация</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer__bottom">
+              <div class="offer__meta">
+                <p class="offer__term"><span class="offer__term-label">Срок:</span> <span class="offer__term-value">от 60 дней</span></p>
+                <p class="offer__price">Обсуждаем на аудите</p>
+              </div>
+              <a class="offer__cta offer__cta--accent" href="#contact">Оставить заявку</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews" data-node-id="110:40">
+      <div class="reviews__inner">
+        <h2 class="reviews__title" data-node-id="110:74">Отзывы</h2>
+      </div>
+
+      <div class="reviews__row" data-node-id="110:75">
+        <figure class="review" data-node-id="110:76">
+          <blockquote class="review__text">Нельзя не отметить клиентоориентированный подход, который демонстрируют все консультанты. Поскольку они глубоко вовлечены в компанию, разделяют её видение и стратегию, они действительно понимают, где возникают срочные проблемы и каковы наши потребности, в отличие от тех, кто работает вне компании.</blockquote>
+          <figcaption class="review__author">
+            <picture class="review__avatar">
+              <source srcset="/src/assets/img/reviews/andrey.webp" type="image/webp" />
+              <img src="/src/assets/img/reviews/andrey.jpg" alt="Климов Андрей" width="72" height="72" loading="lazy" />
+            </picture>
+            <div class="review__person">
+              <p class="review__name">Климов Андрей</p>
+              <p class="review__role">Арт-директор студии Karelin.cc</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="review" data-node-id="110:83">
+          <blockquote class="review__text">Сотрудничество с HR-формула было просто фантастическим. Они появились в тот период, когда нам действительно нужно было выйти на рынок и активизировать набор персонала, и с самого начала мы добились потрясающих результатов.</blockquote>
+          <figcaption class="review__author">
+            <picture class="review__avatar">
+              <source srcset="/src/assets/img/reviews/nina.webp" type="image/webp" />
+              <img src="/src/assets/img/reviews/nina.jpg" alt="Озерова Нина" width="72" height="72" loading="lazy" />
+            </picture>
+            <div class="review__person">
+              <p class="review__name">Озерова Нина</p>
+              <p class="review__role">Операционный директор Unidraft</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="review" data-node-id="110:90">
+          <blockquote class="review__text">Компания HR-формула помогла нам в подборе персонала на должности в наших командах инженеров, разработчиков и дизайнеров. Они всегда усердно работали, добиваясь хороших результатов, и сотрудничество было очень позитивным. Я настоятельно рекомендую их другим.</blockquote>
+          <figcaption class="review__author">
+            <picture class="review__avatar">
+              <source srcset="/src/assets/img/reviews/mikhail.webp" type="image/webp" />
+              <img src="/src/assets/img/reviews/mikhail.jpg" alt="Юдин Михаил" width="72" height="72" loading="lazy" />
+            </picture>
+            <div class="review__person">
+              <p class="review__name">Юдин Михаил</p>
+              <p class="review__role">Арт-директор студии Karelin.cc</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="faq" data-node-id="91:39">
+      <div class="faq__inner">
+        <div class="faq__head-block" data-node-id="91:40">
+          <h2 class="faq__title" data-node-id="91:41">Важные вопросы перед стартом</h2>
+          <p class="faq__subtitle" data-node-id="91:42">
+            Раскрываем все детали рабочих процессов, ценообразования и гарантий
+            результатов
+          </p>
+        </div>
+
+        <div class="faq__list" data-node-id="91:43">
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">1. Сколько стоит ваша работа?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Стоимость обсуждаем на бесплатной консультации. Она зависит от размера компании, состояния процессов и объёма задач. После диагностики называем фиксированную сумму и разбиваем её по этапам работ. Цена закрепляется в договоре и не меняется.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">2. Почему нет цены на сайте?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Потому что проекты сильно отличаются по объёму. Компания на 70 человек и производство на 200 человек требуют разного объема работы и вовлечённости команды. Если поставить одну цену «от Х», она всё равно будет либо мимо ожиданий, либо мимо задачи. Поэтому сначала разбираемся в компании — потом называем стоимость.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">3. Как долго длится консультация и что нужно от меня?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">30–45 минут по видеосвязи. От вас — короткое описание ситуации заранее (3–4 предложения в форме) и готовность поговорить честно. По итогам — карта первых решений и понимание, какой из трёх продуктов вам подходит.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">4. С какого размера бизнеса есть смысл к вам обращаться?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">От 30 человек уже обычно есть запрос. Ядро клиентов это компании от 70 до 250 сотрудников. Если у вас меньше тридцати, на консультации честно скажем, имеет ли смысл наша работа сейчас или стоит подождать.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">5. Что делать, если команда воспримет это как угрозу и саботирует?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Заранее обсуждаем с вами, как и что сообщаем команде. Для сотрудников проект подаётся как «строим прозрачные правила работы», а не «решаем, кого уволить». На практике большинство людей встречают такие изменения спокойно. Команде самой непонятно, по каким правилам сейчас играет компания.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">6. Я уже проходил курсы по управлению. Чем вы отличаетесь?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Тренеры дают теорию, мы делаем руками. Курс не повторяем и управлять не учим. Проводим аудит, собираем оргструктуру и KPI под вашу компанию, передаём готовый комплект. Дальше вы работаете без нас.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">7. Что, если после консультации я решу не работать с вами?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Это нормально и так часто бывает. Консультация бесплатная как раз поэтому. Оба видим, подходим ли друг другу. Иногда самый ценный итог звучит как «вам это не нужно сейчас».</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">8. Вы разберётесь в моей нише, если у меня сложная специфика?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Мы специализируемся на управлении командами, а не на конкретных продуктовых нишах. На старте погружаемся в специфику: цикл, ключевые решения, критичные отделы. Этого хватает, чтобы пересобрать структуру под ваш бизнес. Если нужна узкая отраслевая экспертиза, подключаем профильного консультанта из нашей сети.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">9. Что я получу на руках, и кто этим будет пользоваться после вашего ухода?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Готовый комплект документов: оргсхема, KPI-таблицы, регламенты, должностные, модель мотивации. Команда обучена пользоваться, у каждого руководителя есть свой набор инструментов. Дальше работаете самостоятельно, ежемесячных абонементов в нашей модели нет.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">10. Можно ли взять только часть услуг, без полного пакета?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Да. Для этого есть формат «Конструктор». Берёте отдельные модули по своему выбору: только аудит структуры, только KPI или только аудит ФОТ. На консультации подскажем, что вам реально нужно.</p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__head">
+              <span class="faq__q">11. Какие гарантии вы даёте на результат?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p class="faq__a">Гарантируем поэтапную оплату с возможностью выйти после любого этапа и конкретный список deliverables в конце проекта. Не обещаем рост выручки. Он зависит от рынка и продукта, не от структуры команды. Обещаем прозрачность ФОТ, рабочие KPI и комплект документов, который команда будет использовать.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact" data-node-id="103:16">
+      <div class="cta__inner">
+        <div class="cta__card" data-node-id="103:17">
+          <div class="cta__content" data-node-id="99:19">
+            <div class="cta__text" data-node-id="103:20">
+              <h2 class="cta__title" data-node-id="103:24">
+                Запишитесь на бесплатную <br />консультацию
+              </h2>
+              <p class="cta__lead" data-node-id="103:25">
+                30–45 минут разговора. Презентации и попытки что-то продать
+                в этот час не входят. Разбираем вашу ситуацию и честно говорим,
+                есть ли у нас, что предложить, и какой формат вам подходит.
+              </p>
+            </div>
+
+            <div class="cta__action" data-node-id="103:26">
+              <a class="btn btn--hero btn--cta" href="#contact" data-node-id="99:46">
+                <span class="btn__icon">
+                  <img src="/src/assets/icons/arrow.svg" alt="" aria-hidden="true" width="24" height="24" />
+                </span>
+                Записаться на консультацию
+              </a>
+
+              <ul class="cta__benefits" data-node-id="103:29">
+                <li class="cta__benefit">
+                  <picture>
+                    <source srcset="/src/assets/img/cta/free.webp" type="image/webp" />
+                    <img src="/src/assets/img/cta/free.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy" />
+                  </picture>
+                  Бесплатно
+                </li>
+                <li class="cta__benefit">
+                  <picture>
+                    <source srcset="/src/assets/img/cta/time.webp" type="image/webp" />
+                    <img src="/src/assets/img/cta/time.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy" />
+                  </picture>
+                  30–45 минут
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <picture class="cta__media" data-node-id="104:56">
+            <source srcset="/src/assets/img/cta/consult.webp" type="image/webp" />
+            <img
+              src="/src/assets/img/cta/consult.png"
+              alt="Руки с планшетом, телефоном и лупой"
+              width="469"
+              height="313"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-node-id="106:5">
+    <div class="footer__inner">
+      <div class="footer__main" data-node-id="106:6">
+        <div class="footer__brand" data-node-id="106:7">
+          <p class="footer__logo">Бюро КПД</p>
+          <p class="footer__tagline">Эффективность команды в цифрах</p>
+        </div>
+
+        <nav class="footer__col footer__col--nav" aria-label="Разделы сайта" data-node-id="106:10">
+          <h2 class="footer__caption">Навигация</h2>
+          <ul class="footer__links">
+            <li><a href="#about">Бюро КПД</a></li>
+            <li><a href="#tools">Инструменты</a></li>
+            <li><a href="#team">Кто мы</a></li>
+            <li><a href="#pricing">Тарифы</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col footer__col--contacts" data-node-id="106:16">
+          <h2 class="footer__caption">Контакты</h2>
+          <ul class="footer__contacts">
+            <li class="footer__contact">
+              <img src="/src/assets/icons/phone.svg" alt="" aria-hidden="true" width="16" height="16" />
+              <span>+7 (XXX) XXX-XX-XX</span>
+            </li>
+            <li class="footer__contact">
+              <img src="/src/assets/icons/mail.svg" alt="" aria-hidden="true" width="16" height="16" />
+              <a href="mailto:info@buro-kpd.ru">info@buro-kpd.ru</a>
+            </li>
+            <li class="footer__contact">
+              <img src="/src/assets/icons/telegram.svg" alt="" aria-hidden="true" width="16" height="16" />
+              <a href="https://t.me/burokpd" target="_blank" rel="noopener">@burokpd</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__cta" data-node-id="106:31">
+          <p class="footer__caption footer__caption--right">Остались вопросы?</p>
+          <a class="btn btn--hero btn--footer" href="#contact" data-node-id="109:32">
+            <span class="btn__icon btn__icon--lg">
+              <img src="/src/assets/icons/arrow.svg" alt="" aria-hidden="true" width="32" height="32" />
+            </span>
+            Написать нам
+          </a>
+        </div>
+      </div>
+
+      <hr class="footer__divider" data-node-id="106:37" />
+
+      <div class="footer__bottom" data-node-id="106:39">
+        <div class="footer__legal" data-node-id="106:40">
+          <p>© 2026 Бюро КПД. Все права защищены.</p>
+          <p class="footer__legal-sub">
+            ИП Царапкина В.В. · ИНН 1234567890 · ОГРН 1234567890123
+          </p>
+        </div>
+
+        <ul class="footer__policy" data-node-id="106:43">
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Согласие на обработку персональных данных</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="modal" id="lead-modal" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__inner">
+      <button class="modal__close" type="button" data-modal-close data-node-id="169:227">Закрыть</button>
+
+      <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title" data-node-id="162:192">
+      <picture class="modal__media" data-node-id="162:221">
+        <source srcset="/src/assets/img/modal/form.webp" type="image/webp" />
+        <img src="/src/assets/img/modal/form.jpg" alt="" aria-hidden="true" loading="lazy" />
+      </picture>
+
+      <div class="modal__body" data-node-id="162:194">
+        <div class="modal__head" data-node-id="162:195">
+          <h2 class="modal__title" id="lead-modal-title" data-node-id="162:197">
+            Записаться на консультацию
+          </h2>
+
+          <ul class="cta__benefits modal__benefits" data-node-id="162:198">
+            <li class="cta__benefit">
+              <picture>
+                <source srcset="/src/assets/img/cta/free.webp" type="image/webp" />
+                <img src="/src/assets/img/cta/free.png" alt="" aria-hidden="true" width="24" height="24" />
+              </picture>
+              Бесплатно
+            </li>
+            <li class="cta__benefit">
+              <picture>
+                <source srcset="/src/assets/img/cta/time.webp" type="image/webp" />
+                <img src="/src/assets/img/cta/time.png" alt="" aria-hidden="true" width="24" height="24" />
+              </picture>
+              30–45 минут
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" novalidate data-node-id="162:205">
+          <div class="form__fields">
+            <div class="field">
+              <input
+                class="field__input"
+                type="text"
+                name="name"
+                id="lead-name"
+                placeholder="Введите имя"
+                autocomplete="name"
+                required
+                aria-describedby="lead-name-error"
+              />
+              <p class="field__error" id="lead-name-error" hidden>Обязательное поле</p>
+            </div>
+
+            <div class="field">
+              <input
+                class="field__input"
+                type="tel"
+                name="phone"
+                id="lead-phone"
+                placeholder="+ 7 (000) 000-00-00"
+                autocomplete="tel"
+                inputmode="tel"
+                required
+                aria-describedby="lead-phone-error"
+              />
+              <p class="field__error" id="lead-phone-error" hidden>Обязательное поле</p>
+            </div>
+
+            <div class="field">
+              <textarea
+                class="field__input field__input--area"
+                name="comment"
+                id="lead-comment"
+                placeholder="Комментарий"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form__footer">
+            <div class="field field--consent">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="consent" required aria-describedby="lead-consent-error" />
+                <span class="checkbox__box" aria-hidden="true"></span>
+                <span class="checkbox__label">
+                  Я даю согласие на обработку персональных данных в соответствии
+                  с <a href="#">политикой конфиденциальности</a>
+                </span>
+              </label>
+              <p class="field__error field__error--consent" id="lead-consent-error" hidden>
+                Пожалуйста, отметьте этот пункт для продолжения
+              </p>
+            </div>
+
+            <button class="form__submit" type="submit">Оставить заявку</button>
+          </div>
+        </form>
+      </div>
+      </div>
+
+      <div class="modal__card modal__card--success" role="status" aria-live="polite" hidden>
+        <span class="modal__success-icon" aria-hidden="true"></span>
+        <p class="modal__success-title">Заявка отправлена</p>
+        <p class="modal__success-text">
+          Свяжемся с вами в течение рабочего дня и подберём удобное время.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

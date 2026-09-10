@@ -1,0 +1,297 @@
+/* ---------- Пятый блок: карусель «С чем мы работаем» ---------- */
+.frameworks {
+  /* отступ от предыдущего блока — 120px; margin, а не padding,
+     чтобы подложка блока начиналась ровно после отступа */
+  margin-top: 120px;
+  padding-block: 56px 64px;
+  background: var(--c-card-bg);
+}
+
+.frameworks__inner {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.frameworks__title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+.frameworks__meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 12px;
+}
+
+.frameworks__subtitle {
+  max-width: 879px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--c-muted);
+}
+
+.frameworks__nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+.cbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--c-brand);
+  border-radius: 8px;
+  transition: background-color var(--dur-fast) ease, opacity var(--dur-fast) ease;
+}
+
+.cbtn:hover:not(:disabled) {
+  background: var(--c-brand-hover);
+}
+
+.cbtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cbtn img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Лента ---
+   Лента во всю ширину секции, а не внутри контейнера: иначе карточки
+   обрезаются по невидимой границе контейнера, а не по краю экрана.
+   Первая карточка выровнена по контенту через padding. */
+.frameworks__track {
+  --track-gap: 32px;
+
+  display: flex;
+  gap: var(--track-gap);
+  margin-top: 54px;
+  /* одинаковые поля слева и справа: первая карточка выровнена по заголовку,
+     последняя в конце прокрутки не упирается в край экрана */
+  padding-inline: var(--track-inset);
+  scroll-padding-left: var(--track-inset);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.frameworks__track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.frameworks__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Высота карточки в макете фиксированная (520px), картинка прижата к верху,
+   текст — к низу. У длинного текста он заходит на прозрачный низ иллюстрации,
+   поэтому оба слоя позиционированы абсолютно. */
+.slide {
+  position: relative;
+  /* три карточки по 416px (как в макете) + 32px краешка четвёртой,
+     на широких экранах карточка не растягивается сверх макетной ширины */
+  flex: 0 0 min(416px, calc((100% - 64px) / 3));
+  height: 520px;
+  border-radius: 32px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+/* картинка шире внутренних полей карточки, поэтому живёт вне .slide__body */
+.slide__media {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: var(--media-w);
+}
+
+.slide__media img {
+  width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.slide__body {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  left: 0;
+  padding-inline: 32px;
+}
+
+.slide__title {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #fff;
+}
+
+.slide__text {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* цвета и размеры картинок из макета (доли от карточки 416px) */
+.slide--1 {
+  --media-w: 73.32%;
+  background: #887373;
+}
+
+.slide--2 {
+  --media-w: 87.74%;
+  background: #593752;
+}
+
+.slide--3 {
+  --media-w: 87.74%;
+  background: #854e79;
+}
+
+.slide--4 {
+  --media-w: 84.38%;
+  background: #574964;
+}
+
+.slide--5 {
+  --media-w: 84.38%;
+  background: #7d5270;
+}
+
+.slide--6 {
+  --media-w: 84.38%;
+  background: #403749;
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1024px) {
+  .frameworks__title {
+    font-size: 26px;
+  }
+
+  .frameworks__subtitle {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .frameworks__track {
+    margin-top: 32px;
+  }
+
+  /* на узких карточках текста больше — возвращаем обычный поток,
+     чтобы он ничего не перекрывал */
+  .slide {
+    display: flex;
+    flex-direction: column;
+    flex-basis: min(448px, calc((100% - 64px) / 2));
+    height: auto;
+    min-height: 420px;
+  }
+
+  .slide__media {
+    position: static;
+    transform: none;
+    margin: 0 auto auto;
+  }
+
+  .slide__body {
+    position: static;
+    padding: 0 32px 32px;
+  }
+
+  .slide__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .slide__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .frameworks {
+    /* отступ от предыдущего блока — 80px на мобильных */
+    margin-top: 80px;
+    padding-block: 40px 48px;
+  }
+
+  .frameworks__title {
+    font-size: clamp(22px, 5vw, 26px);
+  }
+
+  .frameworks__meta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .frameworks__subtitle {
+    max-width: none;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .frameworks__nav {
+    justify-content: flex-start;
+  }
+
+  .cbtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* gap равен полю: следующая карточка начинается ровно за краем экрана,
+     поэтому ничего не обрезается */
+  .frameworks__track {
+    --track-gap: var(--gutter);
+
+    margin-top: 24px;
+  }
+
+  .slide {
+    flex-basis: 100%;
+    border-radius: 24px;
+  }
+
+  .slide {
+    min-height: 0;
+  }
+
+  .slide__body {
+    padding: 0 24px 24px;
+  }
+
+  .slide__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

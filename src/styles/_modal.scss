@@ -1,0 +1,468 @@
+/* ---------- Модальная форма заявки ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  opacity: 0;
+  transition: opacity var(--dur-base) ease;
+}
+
+.modal.is-open .modal__overlay {
+  opacity: 1;
+}
+
+.modal__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  width: 100%;
+  max-width: 1088px;
+  max-height: calc(100vh - 48px);
+  transition: max-width var(--dur-base) var(--ease-out);
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transition: opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.modal.is-open .modal__inner {
+  opacity: 1;
+  transform: none;
+}
+
+.modal.is-sent .modal__inner {
+  max-width: 480px;
+}
+
+.modal__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  min-height: 0;
+  padding-right: 48px;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+/* авторский display перебивает [hidden] из браузерных стилей */
+.modal__card[hidden] {
+  display: none;
+}
+
+/* --- Иллюстрация --- */
+.modal__media {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 528px;
+  align-self: stretch;
+}
+
+.modal__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* в макете слой отражён по горизонтали (rotate-180 + scale-y-100) */
+  transform: scaleX(-1);
+}
+
+/* растворяется в фоне карточки со стороны формы */
+.modal__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(250, 250, 249, 0) 50%,
+    var(--c-card-bg) 100%
+  );
+  pointer-events: none;
+}
+
+/* --- Кнопка закрытия ---
+   Стоит над карточкой, вровень с её правым краем; стиль плашек первого экрана. */
+.modal__close {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 80px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--c-chip-text);
+  transition: background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+
+.modal__close:hover {
+  background: #fff;
+  border-color: var(--c-brand);
+  color: var(--c-brand);
+}
+
+/* --- Правая колонка --- */
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-block: 40px;
+  overflow-y: auto;
+}
+
+.modal__head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+.modal__benefits {
+  justify-content: flex-start;
+}
+
+/* --- Форма --- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__input {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid var(--c-field-border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-chip-text);
+  transition: border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
+}
+
+.field__input::placeholder {
+  font-weight: 400;
+  color: var(--c-placeholder);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--c-brand);
+  box-shadow: inset 0 0 0 0.5px var(--c-brand);
+}
+
+.field__input:disabled {
+  background: var(--c-field-disabled);
+  color: var(--c-field-disabled-ink);
+  opacity: 0.8;
+}
+
+.field__input--area {
+  height: 112px;
+  padding: 19px 16px;
+  resize: vertical;
+}
+
+/* состояние ошибки */
+.field.is-invalid .field__input {
+  border-color: var(--c-error);
+}
+
+.field.is-invalid .field__input:focus {
+  box-shadow: inset 0 0 0 0.5px var(--c-error);
+}
+
+.field__error {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--c-error-ink);
+}
+
+.field__error[hidden] {
+  display: none;
+}
+
+.field__error--consent {
+  padding-left: 40px;
+  color: var(--c-error);
+}
+
+/* --- Чекбокс --- */
+.form__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.checkbox__box {
+  position: relative;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border: 1px solid var(--c-checkbox-border);
+  border-radius: 6px;
+  transition: background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
+}
+
+.checkbox:hover .checkbox__box {
+  background: var(--c-field-disabled);
+  border: 1.5px solid var(--c-brand);
+}
+
+.checkbox__input:checked + .checkbox__box {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+}
+
+.checkbox__input:checked + .checkbox__box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/icons/check-mark.svg") center / 12px 12px no-repeat;
+}
+
+.checkbox__input:focus-visible + .checkbox__box {
+  outline: 2px solid var(--c-brand);
+  outline-offset: 2px;
+}
+
+.field--consent.is-invalid .checkbox__box {
+  border: 1.5px solid var(--c-error);
+}
+
+.checkbox__label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--c-brand);
+  opacity: 0.85;
+}
+
+.checkbox__label a {
+  color: var(--c-muted);
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+/* --- Кнопка --- */
+.form__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  background: var(--c-brand);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+  transition: background-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
+}
+
+.form__submit:hover:not(:disabled) {
+  background: var(--c-brand-hover);
+}
+
+.form__submit:active {
+  transform: translateY(1px);
+}
+
+.form__submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* --- Экран «отправлено» ---
+   Отдельная карточка: закрывается сама через 5 секунд или вручную. */
+.modal__card--success {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 40px;
+}
+
+.modal__card--success[hidden] {
+  display: none;
+}
+
+.modal__success-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  background: var(--c-brand) url("../assets/icons/check-mark.svg") center /
+    24px 24px no-repeat;
+  border-radius: 50%;
+}
+
+.modal__success-title {
+  flex: 0 0 auto;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--c-brand);
+}
+
+.modal__success-text {
+  flex: 0 0 auto;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--c-muted);
+}
+
+/* ---------- Планшет ---------- */
+@media (max-width: 1024px) {
+  .modal__card {
+    gap: 24px;
+    padding-right: 32px;
+  }
+
+  .modal__media {
+    width: 40%;
+  }
+
+  .modal__title {
+    font-size: 26px;
+  }
+}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width: 900px) {
+  .modal {
+    padding: 12px;
+  }
+
+  .modal__inner {
+    max-height: calc(100vh - 24px);
+    gap: 8px;
+  }
+
+  .modal__card {
+    padding-right: 0;
+    border-radius: 24px;
+  }
+
+  .modal__card--success {
+    padding: 28px 20px;
+  }
+
+  /* иллюстрация съедала бы всю высоту — на телефоне форма важнее */
+  .modal__media {
+    display: none;
+  }
+
+  .modal__body {
+    padding: 32px 20px;
+    gap: 20px;
+  }
+
+  .modal__title {
+    font-size: clamp(22px, 5.4vw, 26px);
+  }
+
+  .modal__close {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .form {
+    gap: 20px;
+  }
+
+  .field__input {
+    height: 52px;
+    font-size: 16px; /* меньше 16px iOS зумит страницу при фокусе */
+  }
+
+  .field__input--area {
+    height: 96px;
+    padding-block: 16px;
+  }
+
+  .checkbox {
+    gap: 12px;
+  }
+
+  .checkbox__label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .field__error--consent {
+    padding-left: 36px;
+  }
+}
