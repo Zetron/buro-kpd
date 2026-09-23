@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 /* ---------- Модальная форма заявки ---------- */
 .modal {
   position: fixed;
@@ -17,10 +19,9 @@
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
   opacity: 0;
   transition: opacity var(--dur-base) ease;
+  @include blur-backdrop(32px);
 }
 
 .modal.is-open .modal__overlay {

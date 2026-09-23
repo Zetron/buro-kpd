@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 /* ---------- Шапка ---------- */
 .header {
   position: sticky;
@@ -152,10 +154,11 @@
   inset: 0;
   z-index: 45;
   background: rgba(90, 56, 83, 0.28);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   opacity: 0;
   transition: opacity var(--dur-base) ease;
+  /* вызов последним: свойства после вложенного @supports Sass выносит
+     в отдельное правило */
+  @include blur-backdrop(6px);
 }
 
 .nav-backdrop[hidden] {
@@ -319,9 +322,8 @@
     width: 100%;
     padding: 88px 0 20px;
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
     box-shadow: none;
+    @include blur-backdrop(22px);
   }
 
   .nav__link {
