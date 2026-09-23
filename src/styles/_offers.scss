@@ -95,8 +95,8 @@
   border-radius: 16px;
 }
 
+/* Рамка переливается — см. блок в конце файла */
 .offer--featured {
-  /* база для переливающейся рамки — см. конец файла */
   position: relative;
   padding: 31px;
   background: var(--c-featured-bg);
@@ -420,21 +420,24 @@
 }
 
 /* ---------- Переливающаяся рамка выделенного тарифа ----------
-   Сплошной бордер остаётся на месте — он и есть запасной вариант.
-   Поверх него псевдоэлемент рисует ту же рамку градиентом: сам он занимает
-   весь border-box (`inset: -2px` — абсолютные отступы считаются от padding-box,
-   то есть уже внутри бордера), а маска вырезает середину и оставляет кольцо. */
-@supports (mask-composite: exclude) or (-webkit-mask-composite: xor) {
-  .offer--featured::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    z-index: 0;
-    padding: 2px;
-    border-radius: inherit;
+   Фон карточки в два слоя. Нижний — градиент, обрезанный по border-box:
+   он виден только там, где рамка прозрачна, то есть ровно в рамке.
+   Верхний — заливка карточки, обрезанная по padding-box: она закрывает
+   градиент внутри.
+
+   Раньше тут была маска с mask-composite. От неё пришлось отказаться:
+   шорткат -webkit-mask сбрасывает режим наложения обратно в add, и вернуть
+   его строкой -webkit-mask-composite получается только в Chrome и Safari —
+   в Firefox это свойство неизвестно, маска переставала вырезать середину,
+   и градиент заливал всю карточку. background-clip работает везде
+   и без префиксов. */
+.offer--featured {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--c-featured-bg) 0 0) padding-box,
     /* крайние цвета совпадают, поэтому сдвиг ровно на ширину картинки
        (200%) замыкает цикл без стыка */
-    background: linear-gradient(
+    linear-gradient(
         90deg,
         var(--c-brand) 0%,
         var(--c-accent-2) 20%,
@@ -444,26 +447,28 @@
         var(--c-accent-2) 80%,
         var(--c-brand) 100%
       )
-      0 50% / 200% 100%;
-    mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    mask-composite: exclude;
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    animation: offer-sheen 5s linear infinite;
-    pointer-events: none;
-  }
+      border-box;
+  background-size:
+    auto,
+    200% 100%;
+  background-position:
+    0 0,
+    0 50%;
+  animation: offer-sheen 5s linear infinite;
 }
 
+/* позиция задаётся сразу обоим слоям: иначе заливка внутри карточки
+   поехала бы вместе с градиентом */
 @keyframes offer-sheen {
   from {
-    background-position: 0 50%;
+    background-position:
+      0 0,
+      0 50%;
   }
 
   to {
-    background-position: 200% 50%;
+    background-position:
+      0 0,
+      200% 50%;
   }
 }
