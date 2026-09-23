@@ -96,6 +96,8 @@
 }
 
 .offer--featured {
+  /* база для переливающейся рамки — см. конец файла */
+  position: relative;
   padding: 31px;
   background: var(--c-featured-bg);
   border: 2px solid var(--c-accent-2);
@@ -414,5 +416,54 @@
 
   .offer__meta {
     flex-wrap: wrap;
+  }
+}
+
+/* ---------- Переливающаяся рамка выделенного тарифа ----------
+   Сплошной бордер остаётся на месте — он и есть запасной вариант.
+   Поверх него псевдоэлемент рисует ту же рамку градиентом: сам он занимает
+   весь border-box (`inset: -2px` — абсолютные отступы считаются от padding-box,
+   то есть уже внутри бордера), а маска вырезает середину и оставляет кольцо. */
+@supports (mask-composite: exclude) or (-webkit-mask-composite: xor) {
+  .offer--featured::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: 0;
+    padding: 2px;
+    border-radius: inherit;
+    /* крайние цвета совпадают, поэтому сдвиг ровно на ширину картинки
+       (200%) замыкает цикл без стыка */
+    background: linear-gradient(
+        90deg,
+        var(--c-brand) 0%,
+        var(--c-accent-2) 20%,
+        var(--c-bar) 38%,
+        var(--c-divider-soft) 50%,
+        var(--c-bar) 62%,
+        var(--c-accent-2) 80%,
+        var(--c-brand) 100%
+      )
+      0 50% / 200% 100%;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    animation: offer-sheen 5s linear infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes offer-sheen {
+  from {
+    background-position: 0 50%;
+  }
+
+  to {
+    background-position: 200% 50%;
   }
 }

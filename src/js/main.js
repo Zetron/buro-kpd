@@ -2,6 +2,7 @@ import "../styles/main.scss";
 import "./carousel.js";
 import "./faq.js";
 import "./modal.js";
+import "./reveal.js";
 
 (function () {
   "use strict";

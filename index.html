@@ -4,12 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Бюро КПД — аудит ролей, ФОТ и KPI</title>
-  <meta name="description" content="Аудит ролей, ФОТ и KPI. Пересобираем структуру вручную и передаём готовую систему: регламенты, KPI, таблицы и зоны ответственности." />
+  <meta name="description" content="Аудит ролей, ФОТ и KPI. Пересобираем структуру и передаём готовую систему: регламенты, KPI и зоны ответственности. Без долгих внедрений и постоянного консалтинга." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <script>
+    /* Начальное (скрытое) состояние блоков с появлением включает класс
+       js-reveal. Ставим его здесь, до первой отрисовки: из main.js он попал бы
+       на уже показанный блок, и тот заметно уезжал бы в скрытое состояние.
+       Без JS, без IntersectionObserver и при отключённой анимации класса нет —
+       блоки просто видны сразу. */
+    (function () {
+      if (
+        "IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        document.documentElement.classList.add("js-reveal");
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -23,9 +38,8 @@
           <li class="nav__item" style="--i:1"><a class="nav__link" href="#tools">Инструменты</a></li>
           <li class="nav__item" style="--i:2"><a class="nav__link" href="#team">Кто мы</a></li>
           <li class="nav__item" style="--i:3"><a class="nav__link" href="#pricing">Тарифы</a></li>
-          <li class="nav__item" style="--i:4"><a class="nav__link" href="#reviews">Отзывы</a></li>
         </ul>
-        <div class="nav__footer" style="--i:5">
+        <div class="nav__footer" style="--i:4">
           <a class="btn btn--pill nav__cta" href="#contact">Консультация</a>
         </div>
       </nav>
@@ -54,9 +68,9 @@
               а кто только числится
             </h1>
             <p class="hero__lead">
-              Аудит ролей, ФОТ и KPI. Пересобираем структуру вручную<br />
-              и передаём готовую систему: регламенты, KPI, таблицы и зоны
-              ответственности. Без долгих внедрений и постоянного консалтинга.
+              Аудит ролей, ФОТ и KPI. Пересобираем структуру и передаём<br />
+              готовую систему: регламенты, KPI и зоны ответственности.<br />
+              Без долгих внедрений и постоянного консалтинга.
             </p>
           </div>
 
@@ -86,7 +100,6 @@
       <div class="hero__footer">
         <ul class="chips">
           <li class="chip">Для бизнеса 50–500 человек</li>
-          <li class="chip">Москва, Санкт-Петербург, регионы</li>
           <li class="chip">От часовой консультации до полной пересборки</li>
         </ul>
       </div>
@@ -101,13 +114,13 @@
             <span class="problem__icon problem__icon--1">
               <img src="/src/assets/icons/trending-down.svg" alt="" width="32" height="32" aria-hidden="true" />
             </span>
-            <p class="problem__text">Выручка растёт медленнее, чем фонд оплаты труда. ФОТ за три года вырос в полтора раза, прибыль - нет</p>
+            <p class="problem__text">Выручка растёт медленнее, чем фонд оплаты труда</p>
           </li>
           <li class="problem" data-node-id="2:10">
             <span class="problem__icon problem__icon--2">
               <img src="/src/assets/icons/users.svg" alt="" width="32" height="32" aria-hidden="true" />
             </span>
-            <p class="problem__text">В табеле 100+ человек, а вы уже не понимаете, без кого можно завтра обойтись, а кто реально приносит результат</p>
+            <p class="problem__text">В табеле 50+ человек, а вы уже не понимаете, без кого можно завтра обойтись, а кто реально приносит результат</p>
           </li>
           <li class="problem" data-node-id="2:14">
             <span class="problem__icon problem__icon--3">
@@ -138,7 +151,7 @@
     </section>
 
     <section class="expertise" data-node-id="1:660">
-      <div class="expertise__inner">
+      <div class="expertise__inner" data-reveal>
         <div class="expertise__banner" data-node-id="1:663">
           <img
             class="expertise__decor expertise__decor--quote"
@@ -168,17 +181,17 @@
 
         <div class="expertise__panel">
           <ol class="expertise__list" data-node-id="10:15">
-          <li class="point" data-node-id="10:20">
+          <li class="point" style="--i:0" data-node-id="10:20">
             <span class="point__num">01</span>
             <h3 class="point__title">Свой продукт, рынок <br />и клиентов вы знаете лучше всех</h3>
-            <p class="point__text">Иначе компания не выросла бы до 100+ человек</p>
+            <p class="point__text">Иначе компания не выросла бы до 50+ человек</p>
           </li>
-          <li class="point" data-node-id="10:21">
+          <li class="point" style="--i:1" data-node-id="10:21">
             <span class="point__num">02</span>
             <h3 class="point__title">Построение эффективной <br />команды это отдельная профессия</h3>
             <p class="point__text">В ней не стыдно не быть специалистом. Так же как в бухгалтерии или налоговом праве</p>
           </li>
-          <li class="point" data-node-id="10:27">
+          <li class="point" style="--i:2" data-node-id="10:27">
             <span class="point__num">03</span>
             <h3 class="point__title">Мы в этом <br />специализируемся</h3>
             <p class="point__text">Подскажем, что делать, кого нанимать, на что смотреть при оценке текущих людей</p>
@@ -231,7 +244,9 @@
           </li>
 
           <li class="acard" data-node-id="1:725">
-            <p class="acard__title">После проекта вы работаете самостоятельно</p>
+            <p class="acard__title">
+              По завершении нашей работы вы функционируете самостоятельно
+            </p>
             <p class="acard__note">
               Наша задача — сделать так, чтобы через месяц после проекта вы не
               нуждались в нас каждый день
@@ -311,7 +326,7 @@
           </picture>
           <div class="slide__body">
             <p class="slide__title">JTBD для ролей</p>
-            <p class="slide__text">Подход Jobs To Be Done применяем к функциям внутри компании</p>
+            <p class="slide__text">Выстраиваем функции внутри компании с подходом Jobs To Be Done</p>
           </div>
         </li>
         <li class="slide slide--4" data-node-id="1:703">
@@ -348,14 +363,14 @@
     </section>
 
     <section class="gains" data-node-id="1:624">
-      <div class="gains__inner">
+      <div class="gains__inner" data-reveal>
         <h2 class="gains__title" data-node-id="1:625">
           После работы с нами <br />у вас на руках
         </h2>
 
         <div class="gains__grid">
           <div class="gains__col">
-            <article class="gain gain--motivation" data-node-id="1:628">
+            <article class="gain gain--motivation" style="--i:0" data-node-id="1:628">
               <picture class="gain__avatar">
                 <source srcset="/src/assets/img/gains/avatar.webp" type="image/webp" />
                 <img src="/src/assets/img/gains/avatar.png" alt="" aria-hidden="true" width="80" height="80" loading="lazy" />
@@ -366,7 +381,7 @@
               </p>
             </article>
 
-            <article class="gain gain--payroll" data-node-id="1:634">
+            <article class="gain gain--payroll" style="--i:1" data-node-id="1:634">
               <div class="gain__media gain__media--money">
                 <picture>
                   <source srcset="/src/assets/img/gains/money.webp" type="image/webp" />
@@ -378,7 +393,7 @@
               </p>
             </article>
 
-            <article class="gain gain--churn" data-node-id="1:646">
+            <article class="gain gain--churn" style="--i:2" data-node-id="1:646">
               <p class="gain__text gain__text--lg">
                 Разберетесь почему уходят ключевые специалисты
               </p>
@@ -388,7 +403,7 @@
           <div class="gains__mid">
             <div class="gains__mid-top">
               <div class="gains__col">
-                <article class="gain gain--rules" data-node-id="1:648">
+                <article class="gain gain--rules" style="--i:3" data-node-id="1:648">
                   <img
                     class="gain__icon"
                     src="/src/assets/icons/check.svg"
@@ -403,7 +418,7 @@
                   </p>
                 </article>
 
-                <article class="gain gain--kpi" data-node-id="1:643">
+                <article class="gain gain--kpi" style="--i:4" data-node-id="1:643">
                   <p class="gain__text">
                     Система KPI по каждой роли, привязана к выручке или
                     конкретному действию
@@ -413,7 +428,7 @@
               </div>
 
               <div class="gains__col">
-                <article class="gain gain--assessment" data-node-id="1:631">
+                <article class="gain gain--assessment" style="--i:5" data-node-id="1:631">
                   <p class="gain__text gain__text--md">
                     Оценка middle-менеджмента. По каждому руководителю понятно,
                     что с ним делать
@@ -426,7 +441,7 @@
               </div>
             </div>
 
-            <article class="gain gain--wide" data-node-id="1:657">
+            <article class="gain gain--wide" style="--i:6" data-node-id="1:657">
               <p class="gain__text gain__text--xl">
                 Разберетесь в самых эффективных инструментах привлечения и
                 <span class="gain__mark">удержания талантов</span>
@@ -435,7 +450,7 @@
           </div>
 
           <div class="gains__col">
-            <article class="gain gain--offer" data-node-id="1:637">
+            <article class="gain gain--offer" style="--i:7" data-node-id="1:637">
               <div class="gain__media gain__media--offer">
                 <picture>
                   <source srcset="/src/assets/img/gains/offer.webp" type="image/webp" />
@@ -447,7 +462,7 @@
               </p>
             </article>
 
-            <article class="gain gain--roles" data-node-id="1:640">
+            <article class="gain gain--roles" style="--i:8" data-node-id="1:640">
               <picture class="gain__media gain__media--roles">
                 <source srcset="/src/assets/img/gains/roles.webp" type="image/webp" />
                 <img src="/src/assets/img/gains/roles.png" alt="" aria-hidden="true" loading="lazy" />
@@ -817,56 +832,6 @@
       </div>
     </section>
 
-    <section class="reviews" id="reviews" data-node-id="110:40">
-      <div class="reviews__inner">
-        <h2 class="reviews__title" data-node-id="110:74">Отзывы</h2>
-      </div>
-
-      <div class="reviews__row" data-node-id="110:75">
-        <figure class="review" data-node-id="110:76">
-          <blockquote class="review__text">Нельзя не отметить клиентоориентированный подход, который демонстрируют все консультанты. Поскольку они глубоко вовлечены в компанию, разделяют её видение и стратегию, они действительно понимают, где возникают срочные проблемы и каковы наши потребности, в отличие от тех, кто работает вне компании.</blockquote>
-          <figcaption class="review__author">
-            <picture class="review__avatar">
-              <source srcset="/src/assets/img/reviews/andrey.webp" type="image/webp" />
-              <img src="/src/assets/img/reviews/andrey.jpg" alt="Климов Андрей" width="72" height="72" loading="lazy" />
-            </picture>
-            <div class="review__person">
-              <p class="review__name">Климов Андрей</p>
-              <p class="review__role">Арт-директор студии Karelin.cc</p>
-            </div>
-          </figcaption>
-        </figure>
-
-        <figure class="review" data-node-id="110:83">
-          <blockquote class="review__text">Сотрудничество с HR-формула было просто фантастическим. Они появились в тот период, когда нам действительно нужно было выйти на рынок и активизировать набор персонала, и с самого начала мы добились потрясающих результатов.</blockquote>
-          <figcaption class="review__author">
-            <picture class="review__avatar">
-              <source srcset="/src/assets/img/reviews/nina.webp" type="image/webp" />
-              <img src="/src/assets/img/reviews/nina.jpg" alt="Озерова Нина" width="72" height="72" loading="lazy" />
-            </picture>
-            <div class="review__person">
-              <p class="review__name">Озерова Нина</p>
-              <p class="review__role">Операционный директор Unidraft</p>
-            </div>
-          </figcaption>
-        </figure>
-
-        <figure class="review" data-node-id="110:90">
-          <blockquote class="review__text">Компания HR-формула помогла нам в подборе персонала на должности в наших командах инженеров, разработчиков и дизайнеров. Они всегда усердно работали, добиваясь хороших результатов, и сотрудничество было очень позитивным. Я настоятельно рекомендую их другим.</blockquote>
-          <figcaption class="review__author">
-            <picture class="review__avatar">
-              <source srcset="/src/assets/img/reviews/mikhail.webp" type="image/webp" />
-              <img src="/src/assets/img/reviews/mikhail.jpg" alt="Юдин Михаил" width="72" height="72" loading="lazy" />
-            </picture>
-            <div class="review__person">
-              <p class="review__name">Юдин Михаил</p>
-              <p class="review__role">Арт-директор студии Karelin.cc</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
     <section class="faq" data-node-id="91:39">
       <div class="faq__inner">
         <div class="faq__head-block" data-node-id="91:40">
@@ -1063,7 +1028,6 @@
             <li><a href="#tools">Инструменты</a></li>
             <li><a href="#team">Кто мы</a></li>
             <li><a href="#pricing">Тарифы</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
           </ul>
         </nav>
 
@@ -1087,9 +1051,9 @@
 
         <div class="footer__cta" data-node-id="106:31">
           <p class="footer__caption footer__caption--right">Остались вопросы?</p>
-          <a class="btn btn--hero btn--footer" href="#contact" data-node-id="109:32">
-            <span class="btn__icon btn__icon--lg">
-              <img src="/src/assets/icons/arrow.svg" alt="" aria-hidden="true" width="32" height="32" />
+          <a class="btn btn--hero btn--cta" href="#contact" data-node-id="109:32">
+            <span class="btn__icon">
+              <img src="/src/assets/icons/arrow.svg" alt="" aria-hidden="true" width="24" height="24" />
             </span>
             Написать нам
           </a>

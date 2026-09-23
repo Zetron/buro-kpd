@@ -266,3 +266,33 @@
     margin-top: 24px;
   }
 }
+
+/* ---------- Наведение на карточки ----------
+   Только для указателя: на тач-экранах :hover залипает после тапа
+   и карточка так и остаётся увеличенной. */
+@media (hover: hover) {
+  .approach__feature-media img,
+  .acard__media--papers img,
+  .acard__media--chart img {
+    transition: transform 450ms var(--ease-out);
+  }
+
+  /* карточки обрезают содержимое по своим границам, поэтому картинке
+     есть куда расти — за край она не вылезет */
+  .approach__feature:hover .approach__feature-media img,
+  .acard:hover .acard__media--papers img,
+  .acard:hover .acard__media--chart img {
+    transform: scale(1.06);
+  }
+
+  .acard__coin {
+    transition:
+      transform 450ms var(--ease-out),
+      background-color 450ms var(--ease-out);
+  }
+
+  .acard:hover .acard__coin {
+    background: var(--c-brand);
+    transform: scale(1.08);
+  }
+}

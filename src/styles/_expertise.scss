@@ -271,3 +271,62 @@
     padding-inline: 20px;
   }
 }
+
+/* ---------- Появление при скролле ----------
+   Начальное состояние висит на классе js-reveal, который ставит reveal.js.
+   Без JS и при prefers-reduced-motion класса нет — блок виден сразу. */
+.js-reveal .expertise__banner,
+.js-reveal .expertise__panel {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+}
+
+/* светлая панель трогается следом за фиолетовой */
+.js-reveal .expertise__panel {
+  transition-delay: 140ms;
+}
+
+/* декор проявляется с лёгким увеличением;
+   rotate из базового правила приходится повторять — он в том же transform */
+.js-reveal .expertise__decor {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.8);
+  transition:
+    opacity 600ms var(--ease-out) 300ms,
+    transform 600ms var(--ease-out) 300ms;
+}
+
+/* линия под заголовком раскрывается из центра */
+.js-reveal .expertise__rule {
+  transform: scaleX(0);
+  transition: transform 700ms var(--ease-out) 340ms;
+}
+
+/* пункты выезжают друг за другом, когда панель уже на месте */
+.js-reveal .point {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+  transition-delay: calc(var(--i) * 110ms + 420ms);
+}
+
+.expertise__inner.is-revealed .expertise__banner,
+.expertise__inner.is-revealed .expertise__panel,
+.expertise__inner.is-revealed .point {
+  opacity: 1;
+  transform: none;
+}
+
+.expertise__inner.is-revealed .expertise__decor {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+.expertise__inner.is-revealed .expertise__rule {
+  transform: scaleX(1);
+}

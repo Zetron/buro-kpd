@@ -367,3 +367,33 @@
     height: 32px;
   }
 }
+
+/* ---------- Появление при скролле ----------
+   Механика общая с третьим блоком: класс js-reveal на <html> включает
+   скрытое состояние, is-revealed на обёртке запускает показ.
+   Подробности — в комментарии к `.js-reveal` в _expertise.scss. */
+.js-reveal .gains__title {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+}
+
+/* карточки выходят по очереди в порядке разметки: сначала левая колонка
+   сверху вниз, потом середина, потом правая — получается волна слева направо.
+   `--i` задан на самой карточке, поэтому порядок не зависит от раскладки. */
+.js-reveal .gain {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+  transition-delay: calc(var(--i) * 110ms + 180ms);
+}
+
+.gains__inner.is-revealed .gains__title,
+.gains__inner.is-revealed .gain {
+  opacity: 1;
+  transform: none;
+}
