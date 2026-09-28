@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 
-/* На GitHub Pages сайт лежит в подпапке /<имя-репозитория>/,
-   локально — в корне. Имя берём из переменной, которую задаёт Actions,
-   чтобы не хардкодить его в конфиге. */
-const repo = process.env.GITHUB_REPOSITORY?.split("/")[1];
-
 export default defineConfig({
-  base: repo ? `/${repo}/` : "/"
+  /* Сайт живёт на своём домене (burokpd.ru) и отдаётся из корня.
+     Раньше здесь был путь /<имя-репозитория>/ — он нужен только для адреса
+     вида zetron.github.io/buro-kpd/, а GitHub сам перенаправляет его
+     на домен. Домен задаётся файлом public/CNAME: Vite копирует его
+     в dist, а GitHub Pages читает оттуда. */
+  base: "/"
 });
